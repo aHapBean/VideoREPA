@@ -1,5 +1,5 @@
 # VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models
-### [Project Page](https://videorepa.github.io) | [Paper](TODO)
+### [Project Page](https://videorepa.github.io) | [Paper](https://arxiv.org/abs/2505.23656)
 
 > VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models\
 > Xiangdong Zhang, Jiaqi Liao, Shaofeng Zhang, Fanqing Meng, Xiangpeng Wan, Junchi Yan, Yu Cheng \
@@ -36,7 +36,7 @@ Our VideoREPA enhances physics in T2V models by distilling physics knowledge fro
 
 ### ✅ TODO List
 
-All code will be available later.
+All code will be available later. We also appreciate it if you could give a star ⭐ to this repository for latest update.
 
 - [x] Update the introduction to VideoREPA and the visual results comparison.
 - [ ] Releasing the training and inference code.
