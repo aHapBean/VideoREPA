@@ -433,9 +433,17 @@ All code will be available later. We also appreciate it if you could give a star
 
 </table>
 
+## Contact
+
+If you have any questions related to the code or the paper, feel free to email Xiangdong (`zhangxiangdong@sjtu.edu.cn`).
 
 ## Citation
 
 ```
-TODO
+@article{zhang2025videorepa,
+  title={VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models},
+  author={Zhang, Xiangdong and Liao, Jiaqi and Zhang, Shaofeng and Meng, Fanqing and Wan, Xiangpeng and Yan, Junchi and Cheng, Yu},
+  journal={arXiv preprint arXiv:2505.23656},
+  year={2025}
+}
 ```
