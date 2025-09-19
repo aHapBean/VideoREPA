@@ -7,7 +7,7 @@
 
 🎉 Our VideoREPA has been accepted by NeurIPS 2025. 
 
-The code will be open-sourced in a few weeks. If you find our work helpful, feel free to give us a star ⭐ on GitHub for latest update.
+The code will be open-sourced in a few weeks. If you find our work helpful, please consider giving us a star ⭐ on GitHub for latest update.
 
 ### Introduction
 
