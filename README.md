@@ -40,8 +40,6 @@ Our VideoREPA enhances physics in T2V models by distilling physics knowledge fro
 
 ### ✅ TODO List
 
-All code will be available later. We also appreciate it if you could give a star ⭐ to this repository for latest update.
-
 - [x] Update the introduction to VideoREPA and the visual results comparison.
 - [ ] Releasing the training and inference code.
 - [ ] Uploading the checkpoints of VideoREPA.
