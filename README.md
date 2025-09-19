@@ -3,7 +3,11 @@
 
 > VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models\
 > Xiangdong Zhang, Jiaqi Liao, Shaofeng Zhang, Fanqing Meng, Xiangpeng Wan, Junchi Yan, Yu Cheng \
-> Arxiv 2025
+> NeurIPS 2025
+
+🎉 Our VideoREPA has been accepted by NeurIPS 2025. 
+
+The code will be open-sourced in a few weeks. If you find our work helpful, feel free to give us a star ⭐ on GitHub for latest update.
 
 ### Introduction
 
