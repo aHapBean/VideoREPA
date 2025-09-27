@@ -9,6 +9,8 @@
 
 The code will be open-sourced in a few weeks. If you find our work helpful, please consider giving us a star ⭐ on GitHub for latest update.
 
+[2025-09-27] Update: The code is planned to be updated around 2025-10-07 (right after the short vacation).
+
 ### Introduction
 
 <div align="center">
