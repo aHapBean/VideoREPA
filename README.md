@@ -7,6 +7,16 @@
 
 ✨ *A step towards more reliable world modeling by enhancing physics plausibility in video generation.*
 
+## ✅ Project Status
+
+🎉 **Accepted to NeurIPS 2025!**  
+
+- [x] Release introduction & visual results  
+- [x] Release training & inference code  
+- [ ] Upload evaluation benchmarks and checkpoints *(coming soon!)*  
+
+If you find VideoREPA useful, please consider giving us a **star** ⭐ to stay updated.
+
 ### Introduction
 
 <div align="center">
@@ -116,16 +126,6 @@ VideoREPA is the **first successful adaptation of REPA into video generation** �
   </tr>
 
 </table>
-
-## ✅ Project Status
-
-🎉 **Accepted to NeurIPS 2025!**  
-
-- [x] Release introduction & visual results  
-- [x] Release training & inference code  
-- [ ] Upload evaluation benchmarks and checkpoints *(coming soon!)*  
-
-If you find VideoREPA useful, please consider giving us a **star** ⭐ to stay updated.
 
 ## ⚙️ Quick start
 
