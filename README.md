@@ -1,15 +1,11 @@
-# VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models
+# VideoREPA (NeurIPS 2025)
 ### [Project Page](https://videorepa.github.io) | [Paper](https://arxiv.org/abs/2505.23656)
 
 > VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models\
 > Xiangdong Zhang, Jiaqi Liao, Shaofeng Zhang, Fanqing Meng, Xiangpeng Wan, Junchi Yan, Yu Cheng \
 > NeurIPS 2025
 
-🎉 Our VideoREPA has been accepted by NeurIPS 2025. 
-
-The code will be open-sourced in a few weeks. If you find our work helpful, please consider giving us a star ⭐ on GitHub for latest update.
-
-[2025-09-27] Update: The code is planned to be updated around 2025-10-07 (right after the short vacation).
+✨ *A step towards more reliable world modeling by enhancing physics plausibility in video generation.*
 
 ### Introduction
 
@@ -24,7 +20,8 @@ The code will be open-sourced in a few weeks. If you find our work helpful, plea
   Figure 1. Evaluation of physics understanding on the Physion benchmark. The chance performance if 50%.
 </p>
 
-Recent advancements in text-to-video (T2V) diffusion models have enabled high-fidelity and realistic video synthesis. However, current T2V models often struggle to generate physically plausible content due to their limited inherent ability to accurately understand physics. We found that while the representations within T2V models possess some capacity for physics understanding, they lag significantly behind those from recent video self-supervised learning methods. **To this end, we propose a novel framework called VideoREPA, which distills physics understanding capability from video understanding foundation models into T2V models by aligning token-level relations.** This closes the physics understanding gap and enables more physics-plausible generation. Specifically, we introduce the Token Relation Distillation (TRD) loss, leveraging spatio-temporal alignment to provide soft guidance suitable for finetuning powerful pre-trained T2V models—a critical departure from prior representation alignment (REPA) methods. To our knowledge, VideoREPA is the first REPA method designed for finetuning T2V models and specifically for injecting physical knowledge. Empirical evaluations show that VideoREPA substantially enhances the physics commonsense of baseline method, CogVideoX, achieving significant improvement on relevant benchmarks and demonstrating a strong capacity for generating videos consistent with intuitive physics.
+🔍 
+**Physics Understanding Gap:** We identify an essential gap in physics understanding between self-supervised VFMs and T2V models, proposing **the first method to bridge video understanding models and T2V models**. VideoREPA demonstrates that *“understanding helps generation.”* in video generation field.
 
 ### Overview
 
@@ -38,17 +35,18 @@ Recent advancements in text-to-video (T2V) diffusion models have enabled high-fi
   Figure 2. Overview of VideoREPA.
 </p>
 
-Our VideoREPA enhances physics in T2V models by distilling physics knowledge from pre-trained SSL video encoders. We apply Token Relation Distillation (TRD) loss to align pairwise token similarities between video SSL representations and intermediate features in diffusion transformer blocks. Within each representation, tokens form spatial relations with other tokens in the same latent frame and temporal relations with tokens in other latent frames.
+VideoREPA enhances **physics plausibility** in T2V models through **Token Relation Distillation (TRD)** — a loss that aligns **pairwise token relations** between self-supervised video encoders and diffusion transformer features.
 
-### ✅ TODO List
+Each token learns relations about both:
+- **Spatial relations** within a frame  
+- **Temporal relations** across frames  
 
-- [x] Update the introduction to VideoREPA and the visual results comparison.
-- [ ] Releasing the training and inference code.
-- [ ] Uploading the checkpoints of VideoREPA.
+🌟 **Novelty:**  
+VideoREPA is the **first successful adaptation of REPA into video generation** — overcoming key challenges in finetuning large pretrained video diffusion transformers and maintaining temporal consistency.
+
+
 
 ### Qualitative Results
-
-#### Teaser
 
 <table align="center" style="width: 100%;">
   <tr>
@@ -119,298 +117,121 @@ Our VideoREPA enhances physics in T2V models by distilling physics knowledge fro
 
 </table>
 
-#### Qualitative Comparison
+## ✅ Project Status
 
-<table align="center" style="width: 100%;">
-  <tr>
-    <th align="center" style="width: 25%;">HunyuanVideo</th>
-    <th align="center" style="width: 25%;">CogVideoX</th>
-    <th align="center" style="width: 25%;">VideoREPA</th>
-    <th align="center" style="width: 25%;">Prompt</th>
-  </tr>
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/fa151629-0f96-411f-8b87-724c60165ac3" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/3b4a364e-8e58-4885-8660-9d5aa6dcf98e" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/994c20fb-d50f-452b-a882-1f3590d2105c" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      Honey diffusing into warm milk.
-    </td>
-  </tr>
+🎉 **Accepted to NeurIPS 2025!**  
 
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/e2d66ee0-7b97-4b78-95a3-ffa8c5cfdd5b" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/908499fc-bc10-4068-a252-7d37826adc7b" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/c5e57f6b-48ab-4446-a0d5-bd9839499332" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      A cylindrical metal container rolls down a grassy hill...
-    </td>
-  </tr>
+- [x] Release introduction & visual results  
+- [x] Release training & inference code  
+- [ ] Upload evaluation benchmarks and checkpoints *(coming soon!)*  
 
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/4491422e-9801-4466-b756-e6a945219f95" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/37e568c2-7f39-444a-987a-8673929dcd11" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/f158a543-f96d-4cd3-a72d-02ce1fde0cfe" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      Pencil rolls around on a flat desk.
-    </td>
-  </tr>
+If you find VideoREPA useful, please consider giving us a **star** ⭐ to stay updated.
 
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/2d3a1e52-9bfa-473c-9397-da3ba191a913" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/2c5b98b7-f2b8-42fa-af85-7086e97f4039" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/575e0564-14ce-4587-8c1f-ad1c006c4364" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      A crane gently lifts a pallet of bricks.
-    </td>
-  </tr>
+## ⚙️ Quick start
 
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/49d2f76f-9117-481b-9335-8e7d4fa7d22b" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/ab261289-f357-4d9b-af46-648371c6acb2" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/a1b13652-ad6b-491d-9055-4a38a28b7379" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      Two people stretch a bungee cord...
-    </td>
-  </tr>
+### Environment setup
 
-  <tr>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/c4a43f53-e04c-4958-a511-830b748d9af6" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/09b58115-f0c2-4a1f-bbfc-c98e1e3ebe85" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 25%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/a43c1acf-4047-4420-a574-f2ce4e1e4d0d" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>    
-    <td align="center" style="width: 25%;">
-      A player kicks a soccer ball...
-    </td>
-  </tr>
+```bash
+git clone https://github.com/aHapBean/VideoREPA.git
 
-</table>
+conda create --name videorepa python=3.10
+conda activate videorepa
 
-#### CogVideoX vs. VideoREPA (ours)
+cd VideoREPA
+pip install -r requirements.txt
 
-<table align="center" style="width: 100%;">
-  <tr>
-    <th align="center" style="width: 33%;">CogVideoX</th>
-    <th align="center" style="width: 33%;">VideoREPA</th>
-    <th align="center" style="width: 34%;">Prompt</th>
-  </tr>
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/7843434a-39bf-4767-a59a-fdaa193c945b" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/472e560c-27bc-45d2-a9ae-d53f9739bf3a" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A credit card swipes through the machine.
-    </td>
-  </tr>
+# Install diffusers locally (recommended)
+cd ./finetune/diffusers
+pip install -e .
+```
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/2fd68c46-2f80-4fda-a943-baf86733d473" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/82f6e3de-c8a7-4142-9829-2158873b685f" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A dog playfully bats at a balloon...
-    </td>
-  </tr>
+### Dataset download
+Download the [OpenVid](https://github.com/NJU-PCALab/OpenVid-1M) dataset used in VideoREPA. We use parts 30–49 and select subsets containing 32K and 64K videos, respectively. The corresponding CSV files are located in `./finetune/openvid/`.
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/31015091-3804-485f-a0ae-03c3c1d11794" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/f1a07691-3167-476b-b192-4280c85a8504" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A hot iron pressing over a crumpled shirt.
-    </td>
-  </tr>
+```bash
+pip install -U huggingface_hub
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/4cf13627-686c-43c3-bc67-beeac05d8729" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/bc2a3041-f08f-462e-b449-60f0fdba8b47" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A man throwing a stone across a river.
-    </td>
-  </tr>
+# Download parts 30–49
+huggingface-cli download --repo-type dataset nkp37/OpenVid-1M \
+--local-dir ./finetune/openvid \
+--include "OpenVid_part3[0-9].zip"
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/6cc274a9-5596-4c49-9121-144451527d60" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/af248a5f-4e48-494d-bdec-95cec7957338" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A message contained bottle sails across the open sea.
-    </td>
-  </tr>
+huggingface-cli download --repo-type dataset nkp37/OpenVid-1M \
+--local-dir ./finetune/openvid \
+--include "OpenVid_part4[0-9].zip"
+```
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/8dc36f57-b037-4065-896f-ce8c9e1bcb9b" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/5864ccd0-1b9c-46bd-aa01-e365a947d527" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A person mops up a puddle of water on a concrete floor...
-    </td>
-  </tr>
+Then unzip into `./finetune/openvid/videos/`.
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/098381aa-2a3a-464c-84ca-1c9f7af067c7" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/170102ff-8bdc-4c82-9d95-4e09c2da4525" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A person... pouring the remaining beer into a waiting shot glass.
-    </td>
-  </tr>
+### Training 
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/ad2d7608-effd-4445-8aa6-8667cdd998f2" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/02cf8795-5e44-4bb1-9706-030c8753fe25" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A single scull rower uses one oar to propel a boat.
-    </td>
-  </tr>
+```bash
+# Download pretrained CogVideoX checkpoints
+huggingface-cli download --repo-type model zai-org/CogVideoX-2b --local-dir ./ckpt/cogvideox-2b
+huggingface-cli download --repo-type model zai-org/CogVideoX-5b --local-dir ./ckpt/cogvideox-5b
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/6646308d-0f19-4807-8a9f-08715fbc0c09" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/e8b2b785-887d-4514-96da-8236b17253d0" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A spray bottle sprays cleaning solution onto a countertop.
-    </td>
-  </tr>
+# Download pretrained vision encoder such as VideoMAEv2, VJEPA and put them into ./ckpt/. Such as ./ckpt/VideoMAEv2/vit_b_k710_dl_from_giant.pth
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/55e2b720-b999-453e-9a54-6c8b69adc7f2" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/74ee294d-5951-4c8f-bd8a-424cdaa27c7c" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      ...a globe is poked, causing it to spin on its axis
-    </td>
-  </tr>
+# Precompute video cache (shared for 2B/5B)
+cd finetune/
+bash scripts/dataset_precomputing.sh
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/43e64b7a-5613-4e93-b4b1-afa1b03bb6fd" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/84abb957-5113-42b2-9462-75031ada5ed2" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      Parallel bars are shown from a side view with an athlete performing dips.
-    </td>
-  </tr>
+# Training (adjust GPU count in scripts)
+bash scripts/multigpu_VideoREPA_2B_sft.sh
+bash scripts/multigpu_VideoREPA_5B_lora.sh
+```
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/febf1c6d-4148-4817-8e12-77b8c8f69f4a" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/baebf5c0-ae12-49bb-9114-25321ba88753" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      Perfume spraying from a perfume bottle.
-    </td>
-  </tr>
+### Inference
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/ae0ee825-b5c7-4171-84a6-cae3003ced8c" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/1fbcfef4-eb62-4bad-9992-a9f08d583991" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      A person uses a low heat setting on the hairdryer to gently dry their fine hair.  
-    </td>
-  </tr>
-    
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/b283c2b3-4182-44b7-a364-6559e4096594" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/19dee5eb-6b7d-4efc-8565-0496661c797d" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      Detergent flowing into a bucket of water.
-    </td>
-  </tr>
+Inference with the VideoREPA
 
-  <tr>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/eabe7c0f-4c56-4f56-a585-da545a27aa82" controls autoplay loop muted></video>
-    </td>
-    <td align="center" style="width: 33%;">
-      <video width="25%" controls src="https://github.com/user-attachments/assets/1dbcdcef-2a6e-4eba-a268-ab61d50bd410" controls autoplay loop muted>Your browser does not support the video tag.</video>
-    </td>
-    <td align="center" style="width: 34%;">
-      Soap bar sliding off the ceramic dish.
-    </td>
-  </tr>
+```bash
+# Transform checkpoint to diffuser format (only for sft)
+# Put the scripts/merge.sh into the saved checkpoint-xxx/ and run:
+bash merge.sh
 
-</table>
+# Then copy cogvideox-2b/ from ckpt/ to cogvideox-2b-infer/
+# Delete the original transformer dir in cogvideox-2b-infer/
+# Move the transformed transformer dir into it
 
-#### More Generated Videos
+# Modify model_index.config in cogvideox-2b-infer/
+# "transformer": [
+#   "models.cogvideox_align",
+#   "CogVideoXTransformer3DModelAlign"
+# ],
+
+# Inference
+cd inference/
+bash scripts/infer_videorepa_2b_sft.sh
+# bash scripts/infer_videorepa_5b_lora.sh
+```
+
+## Contact
+
+If you have any questions related to the code or the paper, feel free to email Xiangdong (`zhangxiangdong@sjtu.edu.cn`).
+
+## Acknowledgement
+
+This project is built upon and extends several distinguished open-source projects:
+
+- [**CogVideo**](https://github.com/zai-org/CogVideo): A large-scale video generation framework developed by Tsinghua University, which provides the core architectural foundation for this work.  
+
+- [**finetrainers**](https://github.com/huggingface/finetrainers): A high-efficiency training framework that helped enhance our fine-tuning pipeline.
+
+- [**diffusers**](https://github.com/huggingface/diffusers): A go-to library for state-of-the-art pretrained diffusion models for generating images, audio, and even 3D structures of molecules.
+
+## Citation
+
+```
+@article{zhang2025videorepa,
+  title={VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models},
+  author={Zhang, Xiangdong and Liao, Jiaqi and Zhang, Shaofeng and Meng, Fanqing and Wan, Xiangpeng and Yan, Junchi and Cheng, Yu},
+  journal={arXiv preprint arXiv:2505.23656},
+  year={2025}
+}
+```
+
+### More Generated Videos
 
 <table border="0" style="width: 100%; text-align: center; margin-top: 1px;">
   <tr>
@@ -436,18 +257,3 @@ Our VideoREPA enhances physics in T2V models by distilling physics knowledge fro
   </tr>
 
 </table>
-
-## Contact
-
-If you have any questions related to the code or the paper, feel free to email Xiangdong (`zhangxiangdong@sjtu.edu.cn`).
-
-## Citation
-
-```
-@article{zhang2025videorepa,
-  title={VideoREPA: Learning Physics for Video Generation through Relational Alignment with Foundation Models},
-  author={Zhang, Xiangdong and Liao, Jiaqi and Zhang, Shaofeng and Meng, Fanqing and Wan, Xiangpeng and Yan, Junchi and Cheng, Yu},
-  journal={arXiv preprint arXiv:2505.23656},
-  year={2025}
-}
-```
