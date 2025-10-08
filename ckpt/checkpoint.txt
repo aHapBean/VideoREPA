@@ -1,0 +1,4 @@
+Store the checkpoint files include:
+- cogvideox-2b
+- cogvideox-5b
+- VideoMAEv2 and other Foundation Models
