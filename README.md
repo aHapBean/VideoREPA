@@ -7,7 +7,7 @@
 
 ✨ *A step towards more reliable world modeling by enhancing physics plausibility in video generation.*
 
-## ✅ Project Status
+### ✅ Project Status
 
 🎉 **Accepted to NeurIPS 2025!**  
 
@@ -51,8 +51,7 @@ Each token learns relations about both:
 - **Spatial relations** within a frame  
 - **Temporal relations** across frames  
 
-🌟 **Novelty:**  
-VideoREPA is the **first successful adaptation of REPA into video generation** — overcoming key challenges in finetuning large pretrained video diffusion transformers and maintaining temporal consistency.
+🌟 **Novelty:** VideoREPA is the **first successful adaptation of REPA into video generation** — overcoming key challenges in finetuning large pretrained video diffusion transformers and maintaining temporal consistency.
 
 
 
