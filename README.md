@@ -7,6 +7,14 @@
 
 ✨ **A step towards more reliable world modeling by enhancing physics plausibility in video generation.**
 
+|VideoPhy|SA|PC|
+-|-|-
+CogVideoX-5B | 70.0 | 32.3 |
++REPA Loss+DINOv2 | 62.5 ⚠️ | 33.7 | 
++REPA Loss+VideoMAEv2 | 59.3 ⚠️ | 35.5 |
++TRD Loss+VideoMAEv2 (ours) | **72.1** | **40.1**
+
+
 ### ✅ Project Status
 
 🎉 **Accepted to NeurIPS 2025!**  
