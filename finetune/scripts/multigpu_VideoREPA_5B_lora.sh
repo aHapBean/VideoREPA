@@ -7,7 +7,7 @@ conda activate videorepa
 # Prevent tokenizer parallelism issues
 export TOKENIZERS_PARALLELISM=false
 
-BASE_PATH="/prodcpfs/user/zhangxiangdong/VideoREPA/VideoREPA_final_code"
+BASE_PATH="/path/to/VideoREPA"
 
 # Output Configuration
 OUTPUT_ARGS=(
@@ -18,7 +18,7 @@ OUTPUT_ARGS=(
 # Data Configuration
 DATA_ARGS=(
     # training data
-    --train_data_path ${BASE_PATH}/finetune/openvid/openvid_3w2.csv
+    --train_data_path ${BASE_PATH}/finetune/openvid/openvid_6w4.csv
     --data_root "${BASE_PATH}/finetune"
     --train_resolution "49x480x720"  # (frames x height x width), frames should be 8N+1 and height, width should be multiples of 16 49x480x720 81x768x1360
     # place holder (useless)
@@ -81,6 +81,8 @@ VideoREPA_ARGS=(
     --margin 0.1                # the margin for TRD loss in VideoREPA (may be different for various VFMs)
     --comment 'VideoREPA_5B'    # run_name comment for readable wandb log 
     --learning_rate 1e-4
+    --rank 128
+    --lora_alpha 64
 )
 
 JOB_NAME='test'

@@ -11,8 +11,10 @@ test*
 venv
 **/.swp
 **/*.log
+log*.txt
 **/*.debug
 **/.vscode
+*.safetensors
 
 **/output_dir*/
 **/*debug*

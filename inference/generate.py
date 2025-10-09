@@ -120,14 +120,14 @@ if __name__ == "__main__":
     assert args.prompt is None or args.input_file is None
 
 
-    if args.input_file == "videophy2.csv":
+    if "videophy2.csv" in args.input_file:
         # VideoPhy2
         args.output_dir = args.output_dir + '/' + args.input_file.strip('./').removesuffix('.csv')
         os.makedirs(args.output_dir, exist_ok=True)
         df = pd.read_csv(args.input_file)
         captions = df['caption'].tolist()
         long_captions = df['upsampled_caption'].tolist()       
-    elif args.input_file == "videophy.txt":
+    elif "videophy.txt" in args.input_file:
         # VideoPhy
         args.output_dir = args.output_dir + '/' + args.input_file.strip('./').removesuffix('.txt')
         os.makedirs(args.output_dir, exist_ok=True)

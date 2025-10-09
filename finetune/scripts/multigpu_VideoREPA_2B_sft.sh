@@ -7,7 +7,7 @@ conda activate videorepa
 # Prevent tokenizer parallelism issues
 export TOKENIZERS_PARALLELISM=false
 
-BASE_PATH="/prodcpfs/user/zhangxiangdong/VideoREPA/VideoREPA_final_code"
+BASE_PATH="/path/to/VideoREPA"
 
 # Output Configuration
 OUTPUT_ARGS=(
@@ -19,7 +19,7 @@ OUTPUT_ARGS=(
 DATA_ARGS=(
     # training data
     --train_data_path ${BASE_PATH}/finetune/openvid/openvid_3w2.csv
-    --data_root "/mnt/petrelfs/zhangxiangdong/VideoGeneration/CogVideo/finetune"
+    --data_root "${BASE_PATH}/finetune"
     --train_resolution "49x480x720"  # (frames x height x width), frames should be 8N+1 and height, width should be multiples of 16 49x480x720 81x768x1360
     # place holder (useless)
     --caption_column "prompt.txt"
