@@ -5,7 +5,15 @@
 > Xiangdong Zhang, Jiaqi Liao, Shaofeng Zhang, Fanqing Meng, Xiangpeng Wan, Junchi Yan, Yu Cheng \
 > NeurIPS 2025
 
-✨ *A step towards more reliable world modeling by enhancing physics plausibility in video generation.*
+✨ **A step towards more reliable world modeling by enhancing physics plausibility in video generation.**
+
+|VideoPhy|SA|PC|
+-|-|-
+CogVideoX-5B | 70.0 | 32.3 |
++REPA Loss+DINOv2 | 62.5 ⚠️ | 33.7 | 
++REPA Loss+VideoMAEv2 | 59.3 ⚠️ | 35.5 |
++TRD Loss+VideoMAEv2 (ours) | **72.1** | **40.1**
+
 
 ### ✅ Project Status
 
@@ -15,7 +23,7 @@
 - [x] Release training & inference code  
 - [ ] Upload evaluation benchmarks and checkpoints *(coming soon!)*  
 
-If you find VideoREPA useful, please consider giving us a **star** ⭐ to stay updated.
+If you find VideoREPA useful, please consider giving us a star ⭐ to stay updated.
 
 ### Introduction
 
