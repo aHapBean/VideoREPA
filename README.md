@@ -21,7 +21,8 @@ CogVideoX-5B | 70.0 | 32.3 |
 
 - [x] Release introduction & visual results  
 - [x] Release training & inference code  
-- [ ] Upload evaluation benchmarks and checkpoints *(coming soon!)*  
+- [x] Upload checkpoints and provide reproducing tips.
+- [ ] Release evaluation code. *(coming soon!)*  
 
 If you find VideoREPA useful, please consider giving us a star ⭐ to stay updated.
 
@@ -212,6 +213,38 @@ cd inference/
 bash scripts/infer_videorepa_2b_sft.sh
 # bash scripts/infer_videorepa_5b_lora.sh
 ```
+
+Or run inference directly with our released checkpoints.
+Please download the weights from [Huggingface](https://huggingface.co/aHapBean/VideoREPA) and 
+
+- For VideoREPA-5B, place `pytorch_lora_weights.safetensors` in `./inference/`
+
+- For VideoREPA-2B, place the transformer directory inside `./ckpt/cogvideox-2b-infer/`
+
+```bash
+huggingface-cli download --repo-type model aHapBean/VideoREPA --local-dir ./
+```
+
+### Reproducing tips
+
+We provide guidance for convenient results reproduction.
+
+All experiments use **seed = 42** by default in our paper. However, note that randomness exists in both **video generation** and **VideoPhy evaluation**, so identical results across different devices (e.g., GPUs) may not be perfectly reproducible even with the same seed.
+
+To reproduce demo videos, simply download the released [VideoREPA](https://huggingface.co/aHapBean/VideoREPA) checkpoints and run inference — similar videos can be generated using **VideoREPA-5B** (or **2B**).
+
+To approximately reproduce the **VideoPhy scores**, you may either:
+- Use the released evaluation videos, or  
+- Run inference with the released checkpoints.
+
+After the code release, we reproduced **VideoREPA-5B** on a different device and found small differences in results due to randomness in the benchmark and generation process. Adjusting certain parameters such as `proj_coeff` (from **0.5 → 0.45**) helped restore the reported results, since the original settings were tuned with a different seed and device.
+
+| Model | SA | PC |
+|--------|------|------|
+| VideoREPA-5B (reported) | 72.1 | 40.1 |
+| VideoREPA-5B (reproduced) | 74.1 | 40.4 |
+
+Changing the seed slightly may also help. It is expected that you can reproduce the performance trends without further parameter tuning.
 
 ## Contact
 
