@@ -237,7 +237,7 @@ To approximately reproduce the **VideoPhy scores**, you may either:
 - Use the released evaluation videos, or  
 - Run inference with the released checkpoints.
 
-After the code release, we reproduced **VideoREPA-5B** on a different device and found small differences in results due to randomness in the benchmark and generation process. Adjusting certain parameters such as `proj_coeff` (from **0.5 → 0.45**) helped restore the reported results, since the original settings were tuned with a different seed and device.
+After the code release, we reproduced **VideoREPA-5B** on a **different device** and found differences in results due to randomness in the benchmark and generation process. Adjusting certain parameters such as `proj_coeff` (from **0.5 → 0.45**) helped restore the reported results, since the original settings were tuned with a different environment (device).
 
 | Model | SA | PC |
 |--------|------|------|
