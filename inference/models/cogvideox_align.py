@@ -296,7 +296,7 @@ class CogVideoXPipelineAlign(CogVideoXPipeline, DiffusionPipeline):
         tokenizer: T5Tokenizer,
         text_encoder: T5EncoderModel,
         vae: AutoencoderKLCogVideoX,
-        transformer: CogVideoXTransformer3DModelAlign,
+        transformer: Union[CogVideoXTransformer3DModelAlign, CogVideoXTransformer3DModel],
         scheduler: Union[CogVideoXDDIMScheduler, CogVideoXDPMScheduler],
     ):
         super().__init__(tokenizer, text_encoder, vae, transformer, scheduler)
