@@ -23,9 +23,9 @@ CogVideoX-5B | 70.0 | 32.3 |
 - [x] Release training & inference code  
 - [x] Upload checkpoints and provide reproducing tips.
 - [x] Release evaluation code. 
-- [ ] Release generated videos of VideoREPA. *(coming soon!)*  
+- [x] Release generated videos of VideoREPA. Please refer to the [Google Drive](https://drive.google.com/drive/folders/1VnzNeyPXmH90khmzpjKjFMJKCUJ3DZZp?usp=sharing).
 
-If you find VideoREPA useful, please consider giving us a star ⭐ to stay updated.
+If you find VideoREPA useful, please consider giving us a star ⭐.
 
 ### Introduction
 
