@@ -6,8 +6,8 @@ master_ip
 logs/
 *.DS_Store
 .idea
-output*
-test*
+output*/
+# test*
 venv
 **/.swp
 **/*.log
