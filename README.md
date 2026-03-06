@@ -14,6 +14,10 @@ CogVideoX-5B | 70.0 | 32.3 |
 +REPA Loss+VideoMAEv2 | 59.3 ⚠️ | 35.5 |
 +TRD Loss+VideoMAEv2 (ours) | **72.1** | **40.1**
 
+### 📰 News
+
+- 🎉 Sept, 2025: [**VideoREPA**](https://github.com/aHapBean/VideoREPA) is accepted by NuerIPS 2025.
+- 💡 Feb, 2026: [**DreamWorld**](https://github.com/ABU121111/DreamWorld) is available on [Arxiv](https://arxiv.org/abs/2603.00466), a unified framework that integrates complementary world knowledge into video generators via a **Joint World Modeling Paradigm**.
 
 ### ✅ Project Status
 
